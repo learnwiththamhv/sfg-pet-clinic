@@ -1,7 +1,13 @@
 package guru.springframework.sfgpetclinic.model;
 
-import org.springframework.stereotype.Component;
+import lombok.Getter;
+import lombok.Setter;
 
-@Component
+import java.util.Set;
+
+@Setter
+@Getter
 public class Vet extends Person {
+
+    private Set<Speciality> specialities;
 }

@@ -1,7 +1,17 @@
 package guru.springframework.sfgpetclinic.model;
 
-import org.springframework.stereotype.Component;
+import lombok.Getter;
+import lombok.Setter;
 
-@Component
+import java.util.Set;
+
+@Setter
+@Getter
 public class Owner extends Person {
+
+    private String address;
+    private String city;
+    private String telephone;
+
+    private Set<Pet> pets;
 }
