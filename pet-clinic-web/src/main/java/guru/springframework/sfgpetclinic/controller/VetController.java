@@ -1,6 +1,6 @@
 package guru.springframework.sfgpetclinic.controller;
 
-import guru.springframework.sfgpetclinic.service.map.VetMapService;
+import guru.springframework.sfgpetclinic.service.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VetController {
 
-    private VetMapService vetMapService;
+    private VetService vetService;
 
     @Autowired
-    public VetController(VetMapService vetMapService) {
-        this.vetMapService = vetMapService;
+    public VetController(VetService vetService) {
+        this.vetService = vetService;
     }
 
     @RequestMapping({"/vets","/vets.html","/vets/index","/vets/index.html"})
     public String listVets(Model model){
 
-        model.addAttribute("vets",vetMapService.findAll());
+        model.addAttribute("vets",vetService.findAll());
 
         return "vets/index";
     }

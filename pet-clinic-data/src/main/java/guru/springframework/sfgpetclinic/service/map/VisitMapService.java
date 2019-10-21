@@ -3,6 +3,7 @@ package guru.springframework.sfgpetclinic.service.map;
 import guru.springframework.sfgpetclinic.model.Visit;
 import guru.springframework.sfgpetclinic.service.VisitService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -10,6 +11,8 @@ import java.util.Set;
 /**
  * Created by thamhv on 10/21/2019.
  */
+
+@Profile({"default","map"})
 @Service
 @AllArgsConstructor
 public class VisitMapService extends AbstractMapService<Visit,Long> implements VisitService {
